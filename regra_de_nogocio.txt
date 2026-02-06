@@ -1,0 +1,25 @@
+cadastrar PRESENCA
+
+
+separa alunos por turma
+
+{
+    nome: ""
+    turma
+    curso
+}
+
+
+turma 1:
+joao veio? resposta
+luiza veio? resposta
+
+turma 2:
+
+joao veio? resposta
+luiza veio? resposta
+
+turma3:
+
+joao veio? resposta
+luiza veio? resposta
