@@ -17,7 +17,7 @@ while True:
             "adicionar aluno",
             "marcar presenca",
             "exibir informações",
-            "consultar informacoes de um aluno",
+            "consultar informações de um aluno",
             "encerrar programa"
         ]
     ).ask()
@@ -36,7 +36,20 @@ while True:
         lista_informacoes.append(informacoes)
 
     elif escolha == "exibir informações":
-        print(lista_informacoes)
+        contador = 0
+        for aluno in lista_informacoes:
+            contador = contador+1
+            print("\033[1m" + f"Aluno {contador}: " + "\033[0m")
+            print(f"Nome: {aluno["nome"]}")
+            print(f"Turma: {aluno["turma"]}")
+            print(f"Curso: {aluno["curso"]}\n")
+
+    elif escolha == "consultar informações de um aluno":
+        nome = input("Digite o nome do aluno que voce quer achar: ")
+        for aluno in lista_informacoes:
+            if aluno["nome"] == nome:
+                print("\033[1m" + f"aluno encontrado:" + "\033[0m")
+                print(f"nome: {aluno}")
 
     elif escolha == "encerrar programa":
         break
