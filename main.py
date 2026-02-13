@@ -17,7 +17,9 @@ while True:
             "adicionar aluno",
             "marcar presenca",
             "exibir informações",
-            "consultar informações de um aluno",
+            "consultar as informacoes de um aluno",
+            "atualizar as informacoes de um aluno",
+            "deletar um aluno do cadastro",
             "encerrar programa"
         ]
     ).ask()
@@ -36,20 +38,44 @@ while True:
         lista_informacoes.append(informacoes)
 
     elif escolha == "exibir informações":
-        contador = 0
+        num = 0
         for aluno in lista_informacoes:
-            contador = contador+1
-            print("\033[1m" + f"Aluno {contador}: " + "\033[0m")
+            num = num+1
+            print(f"\033[1mAluno {num}\033[0m")
             print(f"Nome: {aluno["nome"]}")
             print(f"Turma: {aluno["turma"]}")
             print(f"Curso: {aluno["curso"]}\n")
 
-    elif escolha == "consultar informações de um aluno":
-        nome = input("Digite o nome do aluno que voce quer achar: ")
+    elif escolha == "consultar as informacoes de um aluno":
+        nome = input("digite o nome do aluno que deseja consultar: ")
         for aluno in lista_informacoes:
             if aluno["nome"] == nome:
-                print("\033[1m" + f"aluno encontrado:" + "\033[0m")
-                print(f"nome: {aluno}")
+                print(f"\nNome: {aluno["nome"]}")
+                print(f"Turma: {aluno["turma"]}")
+                print(f"Curso: {aluno["curso"]}\n")
+
+    elif escolha == "atualizar as informacoes de um aluno":
+        nome = input("Digite o nome do aluno que voce de seja atualizar: ")
+        n_nome = input("Digite o novo nome do aluno: ")
+        n_turma = input("Digite a nova turma do aluno: ")
+        n_curso = input("Digite o novo curso do aluno: ")
+
+        informacoes = {
+            "nome"  : n_nome,
+            "turma" : n_turma,
+            "curso" : n_curso
+            }
+        lista_informacoes.append(informacoes)
+
+        print("informacoes atualizadas!")
+
+    elif escolha == "deletar um aluno do cadastro":
+            nome = input("""Digite o nome do aluno que voce
+deseja deletar do cadastro: """)
+            for aluno in lista_informacoes:
+               if aluno["nome"] == nome:
+                    lista_informacoes.remove(aluno)
+                    print(f"{nome} removido com sucesso!")
 
     elif escolha == "encerrar programa":
         break
