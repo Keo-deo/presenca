@@ -5,8 +5,8 @@ separa alunos por turma
 
 {
     nome: ""
-    turma
-    curso
+    telefone: ""
+    numero_aulas: ""
 }
 
 
